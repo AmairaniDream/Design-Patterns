@@ -5,7 +5,11 @@ import { AdminUIFactory } from './AdminUIFactory';
 import { InstruUIManager } from './InstruUIManager';
 import { InstructorUIFactory } from './InstructorUIFactory';
 
+//Student
+import { StuUIManager} from './StuUIManager';
+import { StudentUIFactory } from './StudentUIFactory';
 
+//Administrador
 const UIFactory = new AdminUIFactory();
 const uiManager = new UIManager(UIFactory);
 
@@ -27,6 +31,13 @@ instructorUI.dialog.show();
 //const uiManager = new UIManager(UIFactory);
 
 // cosnt studet
+const StudeUIFactory = new StudentUIFactory();
+const StuUIManage = new StuUIManager(StudeUIFactory);
+
+const StudentUIRes = StuUIManage.createUI('student');
+StudentUIRes.button.render();
+StudentUIRes.dialog.show();
+
 
 
 
