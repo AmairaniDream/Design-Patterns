@@ -4,12 +4,14 @@ import { CourseBuilder } from './CourseBuilder';
 const basicCourse = new CourseBuilder()
 .setName('Introducción a TypeScript')
 .setInstructor( { name: 'Alice', email: 'alice@example.com', experience: 5 })
+.setCustomMethod((message:string)=>{console.log('Se agrego funcionalidad extra '+ message)})
 .buildCourse();
 
 
 console.log('Curso 1:');
 basicCourse.displayCourseInfo();
 console.log('*****************************************');
+basicCourse.addExtraBehavior('Extra mensaje:  Este curso es sabatico')
 
 
 // Creación de un curso completo con todos los detalles

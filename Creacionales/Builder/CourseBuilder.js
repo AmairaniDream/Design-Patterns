@@ -12,6 +12,7 @@ class CourseBuilder {
         this.students = null;
         this.startDate = null;
         this.endDate = null;
+        this.cutomMethod = (cadena) => { };
     }
     setName(name) {
         this.name = name;
@@ -47,8 +48,13 @@ class CourseBuilder {
         this.endDate = endDate;
         return this;
     }
+    setCustomMethod(method) {
+        this.cutomMethod = method;
+        return this;
+    }
     buildCourse() {
         const course = new Course_1.Course(this.name, this.description, this.materials, this.instructorDetails, this.schedule, this.students, this.startDate, this.endDate);
+        course.addExtraBehavior = this.cutomMethod;
         return course;
     }
 }

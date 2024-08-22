@@ -12,6 +12,9 @@ class Course {
         this.startDate = startDate || new Date(); // Valor por defecto
         this.endDate = endDate || new Date(); // Valor por defecto
     }
+    addExtraBehavior(cadena) {
+        //Funcionalidad desde el exterior
+    }
     displayCourseInfo() {
         var _a, _b, _c, _d, _e;
         console.log(`Curso: ${this.name}`);
