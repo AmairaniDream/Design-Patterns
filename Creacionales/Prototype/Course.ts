@@ -50,6 +50,7 @@ export class Course {
         );    
 
     }
+    
 
     public displayCourseInfo(): void {
         console.log(`Curso: ${this.name}`);
