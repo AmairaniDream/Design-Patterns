@@ -29,3 +29,4 @@ const advancedCourse = new CourseBuilder_1.CourseBuilder()
 console.log('Curso 2:');
 advancedCourse.displayCourseInfo();
 console.log('*****************************************');
+const nuevoObjeto = advancedCourse;
