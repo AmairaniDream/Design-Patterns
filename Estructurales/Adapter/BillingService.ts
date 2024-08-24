@@ -4,10 +4,12 @@ import { ExternalNotificationService } from './ExternalNotificationService';
 
 export class BillingService {
     private notificationManager: NotificationManager;
+    private externalService: ExternalNotificationService
 
 
     constructor() {
         this.notificationManager = NotificationManager.getSingleInstance();
+        this.externalService = new ExternalNotificationService();
  
     }
 
@@ -17,6 +19,7 @@ export class BillingService {
 
         // Notificación de vencimiento de pago
         this.notificationManager.notifyByEmail('Tu pago de colegiatura está próximo a vencer', studentEmail);
-        this.notificationManager.ownNotifybyTelegram('Telegram: tu inscripcion esta por vencer', '5564789120')
+        this.notificationManager.ownNotifybyTelegram('Telegram: tu inscripcion esta por agotarse', '5564789120')
+        //this.externalService.notifyExternalTelegram('5512321498','Urgente pago de colegiatura');
     }
 }
